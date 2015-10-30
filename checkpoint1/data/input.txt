@@ -1,0 +1,48 @@
+eric walusimbi fellow n
+lewis kabui fellow y
+anthony nanda staff
+mahad walusimbi fellow n
+fahad kironde fellow y
+john fahad fellow y
+jerry walusimbi fellow n
+kim kironde fellow n
+jeremy nanda staff
+collin nanda staff
+alex nanda staff
+godson nanda staff
+eric1 walusimbi fellow y
+lewis1 kabui fellow y
+anthony1 nanda staff
+mahad1 walusimbi fellow y
+fahad1 kironde fellow y
+john1 fahad fellow y
+jerry1 walusimbi fellow n
+kim1 kironde fellow y
+jeremy1 nanda staff
+collin1 nanda staff
+alex1 nanda staff
+godson1 nanda staff
+eric2 walusimbi fellow n
+lewis2 kabui fellow y
+anthony2 nanda staff
+mahad2 walusimbi fellow n
+fahad2 kironde fellow y
+john2 fahad fellow y
+jerry2 walusimbi fellow n
+kim2 kironde fellow n
+jeremy2 nanda staff
+collin2 nanda staff
+alex2 nanda staff
+godson2 nanda staff
+eric3 walusimbi fellow y
+lewis3 kabui fellow y
+anthony3 nanda staff
+mahad3 walusimbi fellow y
+fahad3 kironde fellow y
+john3 fahad fellow y
+jerry3 walusimbi fellow n
+kim3 kironde fellow y
+jeremy3 nanda staff
+collin3 nanda staff
+alex3 nanda staff
+godson3 nanda staff
