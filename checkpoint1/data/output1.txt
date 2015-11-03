@@ -1,0 +1,38 @@
+spire9 (OFFICE)
+anthony1 nanda, lewis kabui, eric walusimbi, kim kironde, 
+spire8 (OFFICE)
+godson nanda, kim1 kironde, eric3 walusimbi, jerry2 walusimbi, 
+spire5 (OFFICE)
+collin3 nanda, godson3 nanda, alex1 nanda, fahad kironde, kim3 kironde, jerry1 walusimbi, 
+spire10 (OFFICE)
+anthony3 nanda, john3 fahad, jerry walusimbi, 
+spire7 (OFFICE)
+godson1 nanda, alex2 nanda, fahad2 kironde, john2 fahad, 
+spire6 (OFFICE)
+collin nanda, anthony2 nanda, john1 fahad, fahad1 kironde, john fahad, 
+spire1 (OFFICE)
+jeremy nanda, jeremy2 nanda, alex3 nanda, eric2 walusimbi, 
+spire3 (OFFICE)
+anthony nanda, jeremy1 nanda, collin1 nanda, lewis2 kabui, lewis3 kabui, mahad2 walusimbi, 
+spire2 (OFFICE)
+collin2 nanda, alex nanda, mahad3 walusimbi, mahad1 walusimbi, lewis1 kabui, mahad walusimbi, 
+rwanda (LIVING)
+mahad3 walusimbi, 
+zambia (LIVING)
+fahad2 kironde, 
+somalia (LIVING)
+eric3 walusimbi, lewis3 kabui, 
+uganda (LIVING)
+john fahad, 
+spire4 (OFFICE)
+godson2 nanda, jeremy3 nanda, fahad3 kironde, eric1 walusimbi, 
+burundi (LIVING)
+mahad1 walusimbi, kim1 kironde, 
+kenya (LIVING)
+lewis2 kabui, lewis1 kabui, kim3 kironde, 
+drc (LIVING)
+john1 fahad, eric1 walusimbi, john2 fahad, 
+zimbambwe (LIVING)
+john3 fahad, fahad3 kironde, fahad kironde, lewis kabui, 
+nigeria (LIVING)
+fahad1 kironde, 
