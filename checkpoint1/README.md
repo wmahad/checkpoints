@@ -17,7 +17,7 @@ This module helps you to allocate people(fellows and staff) to rooms from a text
   python entry.py
   ``` 
   
-  4. Install nose  by typing this command
+  4. Install [nose](https://nose.readthedocs.org/en/latest/)  by typing this command
   
   ```
   sudo pip install nose
