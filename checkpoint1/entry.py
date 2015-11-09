@@ -1,76 +1,69 @@
-import amity, sys 
+# implemented importation on different lines
+from amity import Amity
+import sys
 
 print "\twelcome to Amity"
 print
 
-object1 = amity.Admin()
-list_of_people = {}
+amity_system = Amity()
 list_of_rooms = {}
+list_of_people = {}
 living_rooms = []
 office_rooms = []
 switch = False
-switch1 = False
 
-#get rooms from the text file
+
+def allocations(amity, living_rooms, office_rooms):
+    while True:
+        option = int(raw_input("please select an option\
+                \n 1. enter data  file\
+                \n 2. print members in a room\
+                \n 8. to quit\
+                \n input : "))
+        if option == 8:
+            break
+        elif option == 1:
+            try:
+                list_of_people = amity.get_data_file()
+            except IOError:
+                print("File does not exist")
+                list_of_people = amity.get_data_file()
+            if list_of_people:
+                amity.allocate_rooms(
+                    list_of_people, living_rooms, office_rooms)
+            amity.print_allocations()
+            print
+            amity.print_unallocated()
+        elif option == 2:
+            user_input = raw_input("please enter room name: ")
+            room_members = amity.return_room_members(user_input)
+            room_members.pop(1)
+            if room_members:
+                for i in room_members:
+                    print i,
+                print
+            else:
+                print("There are no members in the room")
+
+
+# get rooms from the text file
 try:
-
-	list_of_rooms = object1.getRooms()
-	for x in list_of_rooms:
-		if x.upper() == "LIVING" :
-			living_rooms = list_of_rooms[x]
-		elif x.upper() == "OFFICE":
-			office_rooms = list_of_rooms[x]
-	#check if their are rooms 
-	if living_rooms and office_rooms:
-		switch = True
+    list_of_rooms = amity_system.get_rooms()
+    for x in list_of_rooms:
+        if x.upper() == "LIVING":
+            living_rooms = list_of_rooms[x]
+        elif x.upper() == "OFFICE":
+            office_rooms = list_of_rooms[x]
+    # check if their are rooms
+    if living_rooms and office_rooms:
+        switch = True
 except IOError as e:
-	print "I/O error({0}): {1}".format(e.errno, e.strerror)
+    print "I/O error({0}): {1}".format(e.errno, e.strerror)
 except ValueError:
     print "Sorry there are not rooms in the file"
 except:
     print "Unexpected error:", sys.exc_info()[0]
-    raise
 
-try:
+allocations(amity_system, living_rooms, office_rooms)
 
-	while switch:
-		option = int(raw_input("please select an option\
-			\n 1. enter data  file\
-			\n 2. print members in a room\
-			\n 8. to quit\
-			\n input : "))
-		if option == 8:
-			break
-		elif option == 1:
-			list_of_people = object1.getDataFile()
-		elif option == 2:
-			user_input = raw_input("please enter room name: ")
-			room_members = object1.returnRoomMembers(user_input)
-			i = 0
-			for i in range(len(room_members)):
-				if i == 1:
-					pass
-				else:
-					print room_members[i] + " ", 
-			break
-
-
-	if list_of_people:
-		switch1 = True
-except IOError as e:
-	print "I/O error({0}): {1}".format(e.errno, e.strerror)
-except ValueError:
-    print "You entered Unexpected data."
-except:
-    print "Unexpected error:", sys.exc_info()[0]
-    raise
-
-
-while switch1:
-	#object1.allocateRooms(list_of_people, living_rooms, office_rooms)
-	print
-	object1.printAllocations()
-	object1.printUnAllocated()
-	print 
-	break
-
+# get user input
