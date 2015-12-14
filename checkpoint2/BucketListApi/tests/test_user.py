@@ -54,6 +54,7 @@ class SignUpViewTests(BaseTestCase):
 
 
 class LoginViewTests(BaseTestCase):
+    """This class contains all tests for user login"""
 
     def test_users_can_not_sign_in_when_they_provide_wrong_info(self):
         """tests that user can not login  
