@@ -6,8 +6,10 @@ from models import BucketList, User
 
 
 class BucketListTests(BaseTestCase):
+    """This class contains all tests for a bucketlist"""
 
     def test_bucket_list_creation_suceeds_when_right_info_is_provided(self):
+        """tests that creation of a bucket-list succeeds when correct info is sent"""
         user = User(username='Joe', password='12345')
         db.session.add(user)
         db.session.commit()
@@ -22,6 +24,7 @@ class BucketListTests(BaseTestCase):
             "BucketList Bucket List 1 has been created", response.data)
 
     def test_bucket_list_creation_fails_when_no_info_is_provided(self):
+        """tests that creation of a bucket-list fails when wrong info is sent"""
         user = User(username='Joe', password='12345')
         db.session.add(user)
         db.session.commit()
@@ -34,6 +37,7 @@ class BucketListTests(BaseTestCase):
         self.assertIn("please enter a bucketlist", response.data)
 
     def test_bucket_list_creation_fails_when_same_bucket_list_is_provided(self):
+        """tests that creation of a bucket-list fails when same info is sent"""
         user = User(username='Joe', password='12345')
         db.session.add(user)
         db.session.commit()
@@ -50,6 +54,7 @@ class BucketListTests(BaseTestCase):
             "bucket list : Bucket List 1 already exists", response.data)
 
     def test_existance_of_bucket_lists(self):
+        """tests that there exists bucket-lists"""
         user = User(username='Joe', password='12345')
         db.session.add(user)
         db.session.commit()
@@ -63,6 +68,7 @@ class BucketListTests(BaseTestCase):
             bucketlist.name, response.data)
 
     def test_existance_of_no_bucket_lists(self):
+        """tests that there are no bucket-lists"""
         user = User(username='Joe', password='12345')
         db.session.add(user)
         db.session.commit()
@@ -74,6 +80,7 @@ class BucketListTests(BaseTestCase):
 
     # get for individual bucket lists
     def test_existance_of_single_bucket_list(self):
+        """tests that there exists a single bucket-list"""
         user = User(username='Joe', password='12345')
         db.session.add(user)
         db.session.commit()
@@ -87,6 +94,7 @@ class BucketListTests(BaseTestCase):
             bucketlist.name, response.data)
 
     def test_existance_of_no_single_bucket_lists(self):
+        """tests that there exists no single bucket-list"""
         user = User(username='Joe', password='12345')
         db.session.add(user)
         db.session.commit()
@@ -99,6 +107,8 @@ class BucketListTests(BaseTestCase):
     # Update method for the bucket list
 
     def test_update_of_single_bucket_list_succeeds(self):
+        """tests that updating a bucket list succeeds when
+        right info is sent"""
         user = User(username='Joe', password='12345')
         db.session.add(user)
         db.session.commit()
@@ -115,6 +125,7 @@ class BucketListTests(BaseTestCase):
             "Successfully updated the bucket list: Bucket List One", response.data)
 
     def test_update_of_single_bucket_list_fails_when_no_info_is_provide(self):
+        """tests that update of a bucket-list fails when no info is sent"""
         user = User(username='Joe', password='12345')
         db.session.add(user)
         db.session.commit()
@@ -131,6 +142,7 @@ class BucketListTests(BaseTestCase):
             "Enter a name please", response.data)
 
     def test_update_of_single_bucket_list_fails_when_user_is_not_authenticated(self):
+        """tests that update of a bucket-list fails when user is no authenticated"""
         user = User(username='Joe', password='12345')
         db.session.add(user)
         db.session.commit()
@@ -144,6 +156,7 @@ class BucketListTests(BaseTestCase):
             "Unauthorized Access", response.data)
 
     def test_deletion_of_single_bucket_list_succeds(self):
+        """tests that delete of a bucket-list succeeds"""
         user = User(username='Joe', password='12345')
         db.session.add(user)
         db.session.commit()

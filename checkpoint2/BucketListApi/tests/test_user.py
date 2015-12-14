@@ -7,8 +7,11 @@ from user_auth import auth, verify_password
 
 
 class SignUpViewTests(BaseTestCase):
+    """this class contains all tests for user creation and signin"""
 
     def test_users_can_sign_up_when_they_provide_correct_info(self):
+        """tests that creation of a user succeeds 
+        when correct info is sent"""
         response = self.client.post(url_for('signup'),
                                     data=json.dumps({'username': 'Joe',
                                                      'password': '12345'}), content_type='application/json')
@@ -16,12 +19,16 @@ class SignUpViewTests(BaseTestCase):
         self.assertEqual(response.status_code, 201)
 
     def test_users_can_not_sign_up_when_they_provide_wrong_info(self):
+        """tests that creation of a user fails 
+        when wrong info is sent"""
         response = self.client.post(url_for('signup'),
                                     data=json.dumps({'password': '12345'}), content_type='application/json')
         self.assertIn("Bad Request", response.data)
         self.assertEqual(response.status_code, 400)
 
     def test_users_can_not_sign_up_when_they_provide_existing_info(self):
+        """tests that creation of a user fails 
+        when same info is sent"""
         user = User(username='Joe', password='12345')
         db.session.add(user)
         db.session.commit()
@@ -31,6 +38,8 @@ class SignUpViewTests(BaseTestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_users_can_not_sign_up_when_they_provide_no_info(self):
+        """tests that creation of a user fails 
+        when no info is sent"""
         response = self.client.post(url_for('signup'),
                                     data=json.dumps({'username': '', 'password': ''}), content_type='application/json')
         self.assertIn("please enter a username and password", response.data)
@@ -47,6 +56,8 @@ class SignUpViewTests(BaseTestCase):
 class LoginViewTests(BaseTestCase):
 
     def test_users_can_not_sign_in_when_they_provide_wrong_info(self):
+        """tests that user can not login  
+        when wrong info is sent"""
         user = User(username='Joe', password='12345')
         db.session.add(user)
         db.session.commit()
@@ -56,12 +67,16 @@ class LoginViewTests(BaseTestCase):
         self.assertEqual(response.status_code, 401)
 
     def test_users_can_not_sign_in_when_they_provide_no_info(self):
+        """tests that user can not login  
+        when no info is sent"""
         response = self.request('POST', url_for(
             'login'), auth=('', ''))
         self.assertIn("Unauthorized Access", response.data)
         self.assertEqual(response.status_code, 401)
 
     def test_users_can_sign_in_when_they_provide_right_info(self):
+        """tests that user can login  
+        when correct info is sent"""
         user = User(username='Joe', password='12345')
         db.session.add(user)
         db.session.commit()
