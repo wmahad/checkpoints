@@ -4,6 +4,7 @@ import string
 
 
 class Config(object):
+    """A class to contain app wide configurations"""
     DEBUG = False
     TESTING = False
     CSRF_ENABLED = True
@@ -14,20 +15,24 @@ class Config(object):
 
 
 class ProductionConfig(Config):
+    """A class to contain production configurations"""
     DEBUG = False
 
 
 class StagingConfig(Config):
+    """A class to contain staging configurations"""
     DEVELOPMENT = True
     DEBUG = True
 
 
 class DevelopmentConfig(Config):
+    """A class to contain Development configurations"""
     DEVELOPMENT = False
     DEBUG = False
 
 
 class TestingConfig(Config):
+    """A class to contain testing configurations"""
     TESTING = True
     WTF_CSRF_ENABLED = False
     SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'

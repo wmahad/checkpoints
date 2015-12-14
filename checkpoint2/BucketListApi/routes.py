@@ -13,6 +13,7 @@ class SignUp(Resource):
     """A sign up view for letting us add user to the site"""
 
     def __init__(self):
+        """Set request arguments to be received by the view"""
         self.parser = reqparse.RequestParser()
         self.parser.add_argument('username', type=str, required=True,
                                  help='Username to create user', location='json')
@@ -21,9 +22,11 @@ class SignUp(Resource):
         super(SignUp, self).__init__()
 
     def get(self):
+        """Method handles get requests to the route"""
         pass
 
     def post(self):
+        """Method handles post requests to the route"""
         try:
             # get a users username and password
             args = self.parser.parse_args()
@@ -62,13 +65,16 @@ class Login(Resource):
     decorators = [auth.login_required]
 
     def post(self):
+        """Method handles post requests to the route"""
         token = g.user.generate_auth_token()
         return jsonify({'token': token.decode('ascii')})
 
 
 class LogOut(Resource):
+    """logout view to expose users to logout"""
 
     def post(self):
+        """Method handles post requests to the route"""
         # when user logs out redirect the user to the index page
         pass
 

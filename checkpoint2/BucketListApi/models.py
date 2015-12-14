@@ -27,24 +27,30 @@ class User(db.Model):
         'BucketList', backref='bucketlist_', lazy='dynamic')
 
     def __init__(self, username, password):
+        """Method is called when instantiation"""
         self.username = username
         self.set_password(password)
 
     def __repr__(self):
+        """Method handles representation of the User Model"""
         return '{}'.format(self.id)
 
     def set_password(self, password):
+        """Method used for encrypting a password"""
         self.pwdhash = generate_password_hash(password)
 
     def check_password(self, password):
+        """Method used for checking sent and existing password"""
         return check_password_hash(self.pwdhash, password)
 
     def generate_auth_token(self, expiration=600):
+        """Method used for generating authentication token"""
         s = Serializer(secret_key, expires_in=expiration)
         return s.dumps({'id': self.id})
 
     @staticmethod
     def verify_auth_token(token):
+        """Method used for verifying authentication token"""
         s = Serializer(secret_key)
         try:
             data = s.loads(token)
@@ -73,6 +79,7 @@ class BucketList(db.Model):
         'BucketListItem', backref='bucket_listitem', lazy='dynamic')
 
     def __repr__(self):
+        """Method used for representation of BucketList Model"""
         return '{}'.format(self.name)
 
 
@@ -90,8 +97,10 @@ class BucketListItem(db.Model):
         'bucketlist.id'), nullable=False)
 
     def __init__(self, name, b_id):
+        """Method used for instantiation of a BucketListItem Model"""
         self.name = name
         self.b_id = b_id
 
     def __repr__(self):
+        """Method used for representation of a BucketListItem Model"""
         return '{}'.format(self.id)
