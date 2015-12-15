@@ -172,7 +172,7 @@ To run tests type the following command in terminal:
 $ python -m unittest discover
 ```
 
-And your response should contain below message:
+And your response should contain below message if the tests pass:
 
 ```
 ............................
