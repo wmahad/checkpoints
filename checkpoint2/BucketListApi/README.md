@@ -45,7 +45,7 @@ Responses appear in this format
  To clone the repo type the following command in terminal:
  
  ```
- $ git clone 
+ $ git clone https://github.com/andela-engmkwalusimbi/checkpoints/tree/develop/checkpoint2/BucketListApi
  ```
  
  To install all app requirements type these command in your terminal one after the other:
