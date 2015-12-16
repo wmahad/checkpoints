@@ -9,10 +9,9 @@ python:
 install: "pip install -r requirements.txt"
 branches:
   only:
-  - develop
+  - BucketList
 # command to run tests
 script: python -m unittest discover
 env:
   global:
     - TRAVIS_BUILD=true
-
