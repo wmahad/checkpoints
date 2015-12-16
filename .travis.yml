@@ -11,8 +11,8 @@ branches:
   only:
   - BucketList
 # command to run tests
-script: python -m unittest discover
+script: "python -m unittest discover"
 env:
-  - DB=postgres
+  - DB=sqlite
   global:
     - TRAVIS_BUILD=true

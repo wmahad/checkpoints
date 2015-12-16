@@ -11,7 +11,10 @@ class Config(object):
     SECRET_KEY = ''.join(random.choice(
         string.ascii_uppercase + string.digits) for x in xrange(32))
     ITEMS_PER_PAGE = 20
-    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+    if os.getenv('TRAVIS_BUILD', None):
+        SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
+    else:
+        SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 
 
 class ProductionConfig(Config):
