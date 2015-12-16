@@ -13,6 +13,5 @@ branches:
 # command to run tests
 script: "python -m unittest discover"
 env:
-  - DB=sqlite
   global:
     - TRAVIS_BUILD=true
