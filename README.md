@@ -1,4 +1,8 @@
 # Bucket List API 
+
+ [![Build Status](https://travis-ci.org/andela-engmkwalusimbi/checkpoints.svg)](https://travis-ci.org/andela-engmkwalusimbi/checkpoints)
+[![Coverage Status](https://coveralls.io/repos/andela-engmkwalusimbi/checkpoints/badge.svg?branch=BucketList&service=github)](https://coveralls.io/github/andela-engmkwalusimbi/checkpoints?branch=BucketList)
+
 If you haven't heard of the term `"Bucket List"`, it's a list of all the things you would want to do before you die.
 ###Overview
 `Bucket List API` is a work in progress but fundementals are currently in place, it can let you do the following:
