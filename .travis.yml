@@ -2,12 +2,15 @@ language: python
 python:
   - "2.7"
 # command to install dependencies
-install: "pip install -r requirements.txt"
+install: 
+  - pip install -r requirements.txt
+  - pip install coveralls
 branches:
   only:
   - BucketList
 # command to run tests
-script: "python -m unittest discover"
+script: "coverage run python -m unittest discover"
+after_success: coveralls
 env:
   global:
     - TRAVIS_BUILD=true
